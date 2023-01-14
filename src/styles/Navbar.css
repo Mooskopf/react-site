@@ -1,0 +1,140 @@
+/* ------------- NAVBAR ----------------*/
+
+nav {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+nav img {
+    float: left;
+    cursor: pointer;
+    width: 70px;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links font {
+    padding: 15px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+nav font:hover {
+    cursor: pointer;
+    color: green;
+}
+
+.langSel {
+    padding-left: 40px;
+    font-weight: bold;
+}
+
+.langSel:hover {
+    cursor: pointer;
+}
+
+#lang2 {
+    position: absolute;
+    padding-top: 10px;
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 6px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.mobile-nav {
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.mobile-nav div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(85, 85, 85);
+    margin: 5px;
+}
+
+.mobile-nav:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+
+/* for mobile view*/
+@media (max-width:1048px) {
+
+    nav {
+        height: 70px;
+    }
+
+    nav img {
+        width: 50px;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: calc(100dvh - 50px);
+        top: 50px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .langSel {
+        background-color: white;
+
+        font-size: 15px;
+    }
+
+    #lang2 {
+        padding-top: 8px;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

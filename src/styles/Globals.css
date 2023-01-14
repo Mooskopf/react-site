@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    list-style: 0;
+    text-decoration: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+    font-size: 16px;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.headpic img,
+.headpic span {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+.bluebutton {
+    background-color: rgb(34, 127, 214);
+    border: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.bluebutton:hover {
+    cursor: pointer;
+    background-color: rgb(121, 190, 255);
+}
+
+.text {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 32px;
+    letter-spacing: 1.4px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+@media(max-width: 1600px) {
+    .headpic img {
+        height: 700px;
+    }
+}
+
+@media(max-width: 1048px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
+
+    .headpic img,
+    .headpic span {
+        height: 600px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 820px) {
+
+    .headpic img,
+    .headpic span {
+        height: 400px;
+    }
+
+}
+
+@media(max-width: 554px) {
+
+    .headpic img,
+    .headpic span {
+        height: 300px;
+    }
+
+}
+
+@media(max-width: 438px) {
+
+    .headpic img,
+    .headpic span {
+        height: 280px;
+    }
+
+}
+
+@media(max-width: 400px) {
+
+    .headpic img,
+    .headpic span {
+        height: 200px;
+    }
+
+}

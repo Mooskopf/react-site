@@ -1,0 +1,134 @@
+.footer {
+    display: block;
+    overflow: hidden;
+    padding: 50px 0;
+    box-sizing: border-box;
+    background-color: rgb(6, 15, 43);
+}
+
+.innerfooter {
+    display: block;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+
+.logo_footer {
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.logo_footer img {
+    padding-left: 10px;
+    width: 70px;
+    height: auto;
+}
+
+.footer_third {
+    margin-right: 70px;
+    float: left;
+    height: 100%;
+}
+
+.innerfooter .footer_third h1 {
+    font-size: 18px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer_third a,
+.footer_third div {
+    font-size: 14px;
+    color: white;
+    display: block;
+    letter-spacing: 1px;
+    font-weight: bold;
+    width: 100%;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+.footer_third a:hover {
+    cursor: pointer;
+    color: green;
+}
+
+
+.footer_third li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.social {
+    width: 30px;
+    height: auto;
+}
+
+.bar {
+    border-top: solid rgb(173, 173, 173);
+    background-color: rgb(6, 15, 43);
+    padding: 20px 0;
+    text-align: center;
+    color: rgb(173, 173, 173);
+    font-size: 18px;
+}
+
+
+@media(max-width: 882px) {
+
+    .innerfooter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5em;
+    }
+
+    .logo_footer img {
+        padding-left: 0px;
+        width: 50px;
+    }
+
+    .footer_third li {
+        display: block;
+        padding-right: 0px;
+    }
+
+    .footer_third {
+        align-self: center;
+        justify-self: center;
+        margin-right: 0px;
+        width: 115px;
+        float: left;
+        height: 100%;
+    }
+
+    .footer_third a,
+    .footer_third div {
+        font-size: 13px;
+    }
+
+    .innerfooter .footer_third h1 {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    .innerfooter {
+        width: 60%;
+    }
+
+    .logo_footer {
+        align-self: center;
+        justify-self: center;
+        width: 100px;
+        height: 70px;
+    }
+}
+
+@media(max-width: 612px) {
+    .innerfooter {
+        width: 80%;
+    }
+}
