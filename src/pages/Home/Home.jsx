@@ -7,16 +7,16 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { useQuery } from "react-query"
 
-import Vid from "../assets/video.png"
-import Product1 from "../assets/product1.jpg"
-import Product2 from "../assets/product2.jpeg"
-import Hand from "../assets/hand.png"
-import Handger from "../assets/handger.png"
-import Invprev from "../assets/invesprev.png"
-import useSlideNumber from "../hooks/useSlideNumber"
-import SliderElement from "../components/SliderElement"
-import { getHomeData } from "../api/HomeData"
-import CenterText from "../components/CenterText"
+import Vid from "../../assets/video.png"
+import Product1 from "../../assets/product1.jpg"
+import Product2 from "../../assets/product2.jpeg"
+import Hand from "../../assets/hand.png"
+import Handger from "../../assets/handger.png"
+import Invprev from "../../assets/invesprev.png"
+import useSlideNumber from "../../hooks/useSlideNumber"
+import SliderElement from "./SliderElement"
+import { getHomeData } from "../../api/HomeData"
+import CenterText from "../../components/CenterText"
 
 function Home() {
 

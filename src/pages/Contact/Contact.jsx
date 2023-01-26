@@ -6,8 +6,8 @@ import { Trans, withTranslation } from 'react-i18next'
 import i18n from 'i18next'
 import { Link } from "react-router-dom"
 
-import Mail from "../assets/contact.jpg"
-import Mailger from "../assets/contactger.png"
+import Mail from "../../assets/contact.jpg"
+import Mailger from "../../assets/contactger.png"
 
 function Contact() {
 

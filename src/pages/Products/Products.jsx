@@ -4,11 +4,11 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 import { withTranslation, Trans } from 'react-i18next'
 import i18n from 'i18next'
 
-import Glass from "../assets/glass.png"
-import GlassGer from "../assets/glassger.png"
-import Product1 from "../assets/product1.jpg"
-import Product2 from "../assets/product2.jpeg"
-import Vid from "../assets/video.png"
+import Glass from "../../assets/glass.png"
+import GlassGer from "../../assets/glassger.png"
+import Product1 from "../../assets/product1.jpg"
+import Product2 from "../../assets/product2.jpeg"
+import Vid from "../../assets/video.png"
 
 
 function Products() {

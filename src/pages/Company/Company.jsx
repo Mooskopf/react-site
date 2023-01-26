@@ -3,12 +3,12 @@ import i18n from 'i18next'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 
-import Land from "../assets/company.png"
-import Landger from "../assets/companyger.png"
-import Vision from "../assets/vision.jpeg"
-import Mission from "../assets/mission.jpeg"
-import Murray from "../assets/murray.jpg"
-import Teammember from '../components/Teammember'
+import Land from "../../assets/company.png"
+import Landger from "../../assets/companyger.png"
+import Vision from "../../assets/vision.jpeg"
+import Mission from "../../assets/mission.jpeg"
+import Murray from "../../assets/murray.jpg"
+import Teammember from './Teammember'
 
 function Company() {
 

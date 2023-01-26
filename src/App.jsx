@@ -6,12 +6,12 @@ import React, { Suspense } from "react"
 import PageWrapper from "./components/PageWrapper";
 
 const NoRoute = React.lazy(() => import("./pages/404"))
-const Home = React.lazy(() => import("./pages/Home"))
-const Contact = React.lazy(() => import("./pages/Contact"))
-const Company = React.lazy(() => import("./pages/Company"))
+const Home = React.lazy(() => import("./pages/Home/Home"))
+const Contact = React.lazy(() => import("./pages/Contact/Contact"))
+const Company = React.lazy(() => import("./pages/Company/Company"))
 const Imprint = React.lazy(() => import("./pages/Imprint"))
-const Investors = React.lazy(() => import("./pages/Investors"))
-const Products = React.lazy(() => import("./pages/Products"))
+const Investors = React.lazy(() => import("./pages/Investors/Investors"))
+const Products = React.lazy(() => import("./pages/Products/Products"))
 
 //Testing out the new createBrowserRouter with the ScrollRestoration feature
 const router = createBrowserRouter([
