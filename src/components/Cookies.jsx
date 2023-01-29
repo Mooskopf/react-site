@@ -10,10 +10,10 @@ function Cookies() {
     }
 
     return (
-        <div className="cookiePop" style={cookieActive ? { transform: "translateY(0%)" } : { transform: "translateY(100%)" }}>
-            <div className="cookieText"><Trans i18nKey="Cookietext"></Trans></div>
-            <button type="button" className="bluebutton" onClick={removeCookie}> Okay</button>
-        </div>
+        <section className="cookie" aria-label="cookie information" style={cookieActive ? { transform: "translateY(0%)" } : { transform: "translateY(100%)" }}>
+            <p className="text"><Trans i18nKey="Cookietext"></Trans></p>
+            <button className="blue-button" type="button" onClick={removeCookie}> Okay</button>
+        </section>
     )
 }
 

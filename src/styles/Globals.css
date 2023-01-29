@@ -1,11 +1,15 @@
 body {
     margin: 0;
     padding: 0;
-    list-style: 0;
-    text-decoration: 0;
-    box-sizing: border-box;
     font-family: 'Arial';
-    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    font-size: 18px;
 }
 
 .container {
@@ -13,14 +17,23 @@ body {
     margin: 0 auto;
 }
 
-.headpic img,
-.headpic span {
-    width: 100%;
+.undecorated-list{
+    padding: 0;
+    list-style: none;
+}
+
+.banner, .banner span {
     height: 800px;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.bluebutton {
+.blue-button {
     background-color: rgb(34, 127, 214);
     border: none;
     color: white;
@@ -31,32 +44,45 @@ body {
     font-size: 15px;
 }
 
-.bluebutton:hover {
+.blue-button:hover {
     cursor: pointer;
     background-color: rgb(121, 190, 255);
 }
 
 .text {
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: 0.2px;
 }
 
 h1 {
-    font-size: 40px;
-    letter-spacing: 2px;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 32px;
-    letter-spacing: 1.4px;
+    font-size: 2rem;
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+.page-section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.grey-section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(243, 243, 243);
 }
 
 @media(max-width: 1600px) {
-    .headpic img {
+    .banner, .banner span {
         height: 700px;
     }
 }
@@ -68,13 +94,12 @@ h3 {
         overflow-x: hidden;
     }
 
-    .headpic img,
-    .headpic span {
-        height: 600px;
+    html {
+        font-size: 16px;
     }
 
-    .text {
-        font-size: 16px;
+    .banner, .banner span {
+        height: 600px;
     }
 
     h1 {
@@ -92,8 +117,8 @@ h3 {
 
 @media(max-width: 820px) {
 
-    .headpic img,
-    .headpic span {
+    .banner,
+    .banner span {
         height: 400px;
     }
 
@@ -101,8 +126,8 @@ h3 {
 
 @media(max-width: 554px) {
 
-    .headpic img,
-    .headpic span {
+    .banner,
+    .banner span {
         height: 300px;
     }
 
@@ -110,8 +135,8 @@ h3 {
 
 @media(max-width: 438px) {
 
-    .headpic img,
-    .headpic span {
+    .banner,
+    .banner span {
         height: 280px;
     }
 
@@ -119,8 +144,8 @@ h3 {
 
 @media(max-width: 400px) {
 
-    .headpic img,
-    .headpic span {
+    .banner,
+    .banner span {
         height: 200px;
     }
 

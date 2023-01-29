@@ -6,42 +6,55 @@ import Logo from "../assets/logo.png"
 
 function Footer() {
     return (
-        <div className="wrapper">
-            <div className="footer">
-                <div className="innerfooter">
+        <footer>
+            <article className="footer" aria-label="footer content top">
+                <div className="container">
+                    <div className="footer-grid">
+                        <section className="logo-footer" aria-label="company logo">
+                            <Link to="/"><img alt="Logo" src={Logo}></img></Link>
+                        </section>
 
-                    <div className="logo_footer">
-                        <Link to="/"><img alt="Logo" src={Logo}></img></Link>
-                    </div>
+                        <section className="footer-third">
+                            <header>
+                                <h3><Trans i18nKey="Footer.Ad"></Trans></h3>
+                            </header>
+                            <ul className="text undecorated-list">
+                                <li>Lorem ipsum</li>
+                                <li>Lorem ipsum 60</li>
+                                <li>7777 Lorem ipsum</li>
+                            </ul>
+                        </section>
 
-                    <div className="footer_third">
-                        <h1><Trans i18nKey="Footer.Ad"></Trans></h1>
-                        <div>Lorem ipsum</div>
-                        <div>Lorem ipsum 60</div>
-                        <div>7777 Lorem ipsum</div>
-                    </div>
+                        <section role="navigation" className="footer-third" id="nav">
+                            <header>
+                                <h3>Navigation</h3>
+                            </header>
+                            <ul className="text undecorated-list">
+                                <li><Link to="/"> Home</Link></li>
+                                <li><Link to="/company"> <Trans i18nKey="Nav.Co"></Trans></Link></li>
+                                <li><Link to="/products"> <Trans i18nKey="Nav.Pr"></Trans></Link></li>
+                                <li><Link to="/investors"> <Trans i18nKey="Nav.Inv"></Trans></Link></li>
+                                <li><Link to="/contact"> <Trans i18nKey="Nav.Con"></Trans></Link></li>
+                            </ul>
+                        </section>
 
-                    <div className="footer_third" id="nav">
-                        <h1>Navigation</h1>
-                        <Link to="/"> Home</Link>
-                        <Link to="/company"> <Trans i18nKey="Nav.Co"></Trans></Link>
-                        <Link to="/products"> <Trans i18nKey="Nav.Pr"></Trans></Link>
-                        <Link to="/investors"> <Trans i18nKey="Nav.Inv"></Trans></Link>
-                        <Link to="/contact"> <Trans i18nKey="Nav.Con"></Trans></Link>
-                    </div>
-
-                    <div className="footer_third">
-                        <h1><Trans i18nKey="Footer.Mo"></Trans></h1>
-                        <Link to="/imprint"><Trans i18nKey="Footer.Inf"></Trans></Link>
-                        <Link to="/imprint#privacy" preventScrollReset={true}><Trans i18nKey="Footer.Le"></Trans></Link>
+                        <section role="navigation" className="footer-third">
+                            <header>
+                                <h3><Trans i18nKey="Footer.Mo"></Trans></h3>
+                            </header>
+                            <ul className="text undecorated-list">
+                                <li><Link to="/imprint"><Trans i18nKey="Footer.Inf"></Trans></Link></li>
+                                <li><Link to="/imprint#privacy" preventScrollReset={true}><Trans i18nKey="Footer.Le"></Trans></Link></li>
+                            </ul>
+                        </section>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div className="bar">
+            <section className="bar" aria-label="copyright info">
                 © 2023 Florin Brüske
-            </div>
-        </div>
+            </section>
+        </footer>
     )
 }
 

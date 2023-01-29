@@ -17,37 +17,37 @@ const Products = React.lazy(() => import("./pages/Products/Products"))
 const router = createBrowserRouter([
   {
     path: "*",
-    element: <><PageWrapper><NoRoute /></ PageWrapper></>,
+    element: <PageWrapper><NoRoute /></ PageWrapper>,
   },
   {
     path: "/",
-    element: <><PageWrapper><Home /></ PageWrapper></>,
+    element: <PageWrapper><Home /></ PageWrapper>
   },
   {
     path: "/company",
-    element: <><PageWrapper><Company /></ PageWrapper></>,
+    element: <PageWrapper><Company /></ PageWrapper>,
   },
   {
     path: "/contact",
-    element: <><PageWrapper><Contact /></ PageWrapper></>,
+    element: <PageWrapper><Contact /></ PageWrapper>,
   },
   {
     path: "/investors",
-    element: <><PageWrapper><Investors /></ PageWrapper></>,
+    element: <PageWrapper><Investors /></ PageWrapper>
   },
   {
     path: "/products",
-    element: <><PageWrapper><Products /></ PageWrapper></>,
+    element: <PageWrapper><Products /></ PageWrapper>,
   },
   {
     path: "/imprint",
-    element: <><PageWrapper><Imprint /></ PageWrapper></>,
+    element: <PageWrapper><Imprint /></ PageWrapper>,
   },
 ]);
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" aria-label="example website">
       <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>

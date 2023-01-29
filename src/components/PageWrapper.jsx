@@ -12,9 +12,9 @@ export default function PageWrapper({ children }) {
         <div>
             <QueryClientProvider client={queryClient}>
                 <ScrollRestoration />
+                <Cookies />
                 <Navbar />
                 {children}
-                <Cookies />
                 <Footer />
             </QueryClientProvider>
         </div>

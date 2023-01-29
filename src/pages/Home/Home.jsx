@@ -34,43 +34,54 @@ function Home() {
         slidesToScroll: 1,
     }
 
-    if (isLoading) {return(<CenterText text={"Loading ..."} />)}
-    if (isError){return(<CenterText text={`Error: ${error.message}`} />)}
+    if (isLoading) { return (<CenterText text={"Loading ..."} />) }
+    if (isError) { return (<CenterText text={`Error: ${error.message}`} />) }
 
     return (
-        <div className="main">
-            <div className="headpic">
+        <div className="home">
+            <header className="banner">
                 <LazyLoadImage
                     alt="Banner"
                     effect="blur"
                     src={i18n.language === "de" ? Handger : Hand} />
-            </div>
-            <div className="container">
-                <div className="aboutUs">
-                    <h1>{i18n.language === "de" ? data.headlineDe : data.headlineEn}</h1>
-                    <div className="text">
-                        <Trans i18nKey="Home.Abtext"></Trans>
+            </header>
+            <main>
+                <article aria-label="about-us" className="page-section">
+                    <div className="container">
+                        <header>
+                            <h1>{i18n.language === "de" ? data.headlineDe : data.headlineEn}</h1>
+                        </header>
+                        <p className="text">
+                            <Trans i18nKey="Home.Abtext"></Trans>
+                        </p>
+                        <Link to="company">
+                            <button className="blue-button" type="button">
+                                <Trans i18nKey="Home.Bu"></Trans>
+                            </button>
+                        </Link>
                     </div>
-                    <br></br>
-                    <Link to="company"><button type="button" className="bluebutton"><Trans i18nKey="Home.Bu"></Trans></button></Link>
-                </div>
-                <div className="vidContainer">
-                    <img src={Vid} alt="vid"></img>
-                </div>
-            </div>
-            <div className="third">
-                <div className="container">
-                    <Slider {...settings}>
-                        <SliderElement pathname={"products#product1"} headline={<Trans i18nKey="Home.Ba"></Trans>} text={<Trans i18nKey="Home.Batext"></Trans>}
-                            infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Product1} />
-                        <SliderElement pathname={"products#product2"} headline={<Trans i18nKey="Home.Ge"></Trans>} text={<Trans i18nKey="Home.Getext"></Trans>}
-                            infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Product2} />
-                        <SliderElement pathname={"/investors"} headline={<Trans i18nKey="Home.Inv"></Trans>} text={<Trans i18nKey="Home.Invtext"></Trans>}
-                            infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Invprev} />
-                    </Slider>
-                </div>
-            </div>
-        </div >
+                </article>
+                <section aria-label="company-video" className="grey-section">
+                    <div className="container">
+                        <div className="video-container">
+                            <img src={Vid} alt="video"></img>
+                        </div>
+                    </div>
+                </section>
+                <section aria-label="products-slider" className="page-section">
+                    <div className="container">
+                        <Slider {...settings}>
+                            <SliderElement ariaLabel={"product one"} pathname={"products#product1"} headline={<Trans i18nKey="Home.Ba"></Trans>} text={<Trans i18nKey="Home.Batext"></Trans>}
+                                infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Product1} />
+                            <SliderElement ariaLabel={"product two"} pathname={"products#product2"} headline={<Trans i18nKey="Home.Ge"></Trans>} text={<Trans i18nKey="Home.Getext"></Trans>}
+                                infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Product2} />
+                            <SliderElement ariaLabel={"investor info"} pathname={"/investors"} headline={<Trans i18nKey="Home.Inv"></Trans>} text={<Trans i18nKey="Home.Invtext"></Trans>}
+                                infotext={<Trans i18nKey="Home.Info"></Trans>} pic={Invprev} />
+                        </Slider>
+                    </div>
+                </section>
+            </main>
+        </div>
     )
 }
 

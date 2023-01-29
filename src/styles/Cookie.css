@@ -1,26 +1,18 @@
-.cookiePop {
-    background-color: black;
-    opacity: 0.95;
+.cookie {
+    background-color: rgba(0, 0, 0, 0.95);
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding-top: 15px;
     transition: transform 0.5s ease-in-out;
+    z-index: 2;
 }
 
-.cookieText {
-    padding-bottom: 10px;
+.cookie .text {
+    margin: 20px;
 }
 
-.cookiePop button {
-    margin-bottom: 10px;
-}
-
-
-@media(max-width: 1372px) {
-    .cookiePop {
-        font-size: 14px;
-    }
+.cookie button {
+    margin-bottom: 20px;
 }

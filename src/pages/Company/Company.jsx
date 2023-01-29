@@ -8,75 +8,83 @@ import Landger from "../../assets/companyger.png"
 import Vision from "../../assets/vision.jpeg"
 import Mission from "../../assets/mission.jpeg"
 import Murray from "../../assets/murray.jpg"
-import Teammember from './Teammember'
+import TeamMember from './TeamMember.jsx'
 
 function Company() {
 
     return (
         <div className="company">
-            <div className="headpic">
+            <header className="banner">
                 <LazyLoadImage
                     alt="Banner"
                     effect="blur"
                     src={i18n.language === "de" ? Landger : Land} />
-            </div>
-            <div className="container">
-                <h1><Trans i18nKey="Comp.Vm"></Trans></h1>
-                <div className="line" id="vmLine"></div>
-                <div className="vm">
-                    <div className="vContainer">
-                        <div className="visionDesktop">
-                            <img src={Vision} alt="Vision"></img>
-                        </div>
-                        <div>
-                            <div className="text">
-                                <h2>Vision</h2>
-                                <Trans i18nKey="Comp.Vtext1"></Trans>
-                                <br></br><br></br>
-                                <Trans i18nKey="Comp.Vtext2"></Trans>
-                                <br></br><br></br>
-                                <Trans i18nKey="Comp.Vtext3"></Trans>
-                            </div>
-                        </div>
-                        <div className="visionMobile">
-                            <img src={Vision} alt="Vision"></img>
+            </header>
+            <main>
+                <article aria-label="vision-and-mission" className="page-section">
+                    <div className="container">
+                        <header>
+                            <h1><Trans i18nKey="Comp.Vm"></Trans></h1>
+                        </header>
+                        <div className="line"></div>
+                        <div className="vision-mission">
+                            <section className="vision-container" aria-label="vision">
+                                <div className="vision-desktop">
+                                    <img src={Vision} alt="Vision"></img>
+                                </div>
+                                <div>
+                                    <div className="text">
+                                        <header>
+                                            <h2>Vision</h2>
+                                        </header>
+                                        <p><Trans i18nKey="Comp.Vtext1"></Trans></p>
+                                        <p><Trans i18nKey="Comp.Vtext2"></Trans></p>
+                                        <p><Trans i18nKey="Comp.Vtext3"></Trans></p>
+                                    </div>
+                                </div>
+                                <div className="vision-mobile">
+                                    <img src={Vision} alt="Vision"></img>
+                                </div>
+                            </section>
+                            <section className="mission-container" aria-label="mission">
+                                <div>
+                                    <div className="text">
+                                        <header>
+                                            <h2>Mission</h2>
+                                        </header>
+                                        <p><Trans i18nKey="Comp.Mtext1"></Trans></p>
+                                        <p><Trans i18nKey="Comp.Mtext2"></Trans></p>
+                                        <p><Trans i18nKey="Comp.Mtext3"></Trans></p>
+                                    </div>
+                                </div>
+                                <div id="mission-image">
+                                    <img src={Mission} alt="Mission"></img>
+                                </div>
+                            </section>
                         </div>
                     </div>
-                    <div className="mContainer">
-                        <div>
-                            <div className="text">
-                                <h2>Mission</h2>
-                                <Trans i18nKey="Comp.Mtext1"></Trans>
-                                <br></br><br></br>
-                                <Trans i18nKey="Comp.Mtext2"></Trans>
-                                <br></br><br></br>
-                                <Trans i18nKey="Comp.Mtext3"></Trans>
-                            </div>
-                        </div>
-                        <div id="mPic">
-                            <img src={Mission} alt="Mission"></img>
+                </article>
+                <article className="grey-section" aria-label="our-team">
+                    <div className='container'>
+                        <header>
+                            <h1><Trans i18nKey="Comp.Out"></Trans></h1>
+                        </header>
+                        <div className="line" />
+                        <div className="team">
+                            <TeamMember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Ph"></Trans>}
+                                text={<Trans i18nKey="Comp.Pt"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
+                            <TeamMember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Nh"></Trans>}
+                                text={<Trans i18nKey="Comp.Nt"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
+                            <TeamMember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Oh"></Trans>}
+                                text={<Trans i18nKey="Comp.Ot"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
+                            <TeamMember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Hh"></Trans>}
+                                text={<Trans i18nKey="Comp.Ht"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
+                            <TeamMember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Nih"></Trans>}
+                                text={<Trans i18nKey="Comp.Nit"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="ourTeam">
-                <div className='container'>
-                    <h1><Trans i18nKey="Comp.Out"></Trans></h1>
-                    <div className="line" />
-                    <div className="team">
-                        <Teammember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Ph"></Trans>} 
-                            text={<Trans i18nKey="Comp.Pt"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
-                        <Teammember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Nh"></Trans>} 
-                            text={<Trans i18nKey="Comp.Nt"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
-                        <Teammember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Oh"></Trans>} 
-                            text={<Trans i18nKey="Comp.Ot"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
-                        <Teammember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Hh"></Trans>} 
-                            text={<Trans i18nKey="Comp.Ht"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
-                        <Teammember name={"Max Mustermann"} title={<Trans i18nKey="Comp.Nih"></Trans>} 
-                            text={<Trans i18nKey="Comp.Nit"></Trans>} pic={Murray} linkedin={"https://www.linkedin.com/"} />
-                    </div>
-                </div>
-            </div>
+                </article>
+            </main>
         </div>
     )
 }

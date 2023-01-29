@@ -1,60 +1,34 @@
 import { useEffect, useState } from 'react'
-import { withTranslation } from 'react-i18next'
 import i18n from 'i18next'
 
 function LangSelector() {
 
-    const [engActive, setEngActive] = useState(false)
-    const [arrowActive, setArrowActive] = useState(false)
+    const [deActive, setDeActive] = useState(false)
 
     useEffect(() => {
         if (i18n.language === "de") {
-            setEngActive(false)
+            setDeActive(true)
         } else {
-            setEngActive(true)
+            setDeActive(false)
         }
     }, [])
 
-    const changeLanguage = lng => {
-        i18n.changeLanguage(lng)
-    }
-
-    function showLang() {
-        setArrowActive(prev => !prev)
-    }
-
-    function changeLang() {
-
-        setArrowActive(false)
-        if (i18n.language === "de") {
-            changeLanguage('en')
-            setEngActive(true)
+    function changeLanguage(e) {
+        if (e.target.value === "de") {
+            setDeActive(true)
+            i18n.changeLanguage("de")
         } else {
-            changeLanguage('de')
-            setEngActive(false)
+            setDeActive(false)
+            i18n.changeLanguage("en")
         }
-
     }
 
     return (
-        <div className="langSel">
-            <div onClick={showLang}>
-                <span id="lang1">
-                    {engActive ?
-                        "en"
-                        : "de"
-                    }
-                </span><span className="arrow" style={arrowActive ? { borderTop: "0", borderBottom: "7px solid rgb(56, 175, 255)" } : { borderTop: "7px solid rgb(56, 175, 255)", borderBottom: "0" }}></span>
-            </div>
-            {arrowActive ?
-                <div id="lang2" onClick={changeLang}>
-                    {engActive ?
-                        "de"
-                        : "en"
-                    }</div>
-                : <></>}
-        </div>
+        <select className="language-selector" aria-label="language selector" value={deActive ? "de" : "en"} onChange={changeLanguage}>
+            <option value="de" name="german">de</option>
+            <option value="en" name="english">en</option>
+        </select>
     )
 }
 
-export default withTranslation()(LangSelector)
+export default LangSelector

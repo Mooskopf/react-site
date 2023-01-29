@@ -6,59 +6,41 @@
     background-color: rgb(6, 15, 43);
 }
 
-.innerfooter {
-    display: block;
-    margin: 0 auto;
-    width: 1000px;
-    height: 100%;
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 
-.logo_footer {
-    width: 35%;
-    float: left;
-    height: 100%;
-    display: block;
+.footer a{
+    color: white;
 }
 
-.logo_footer img {
-    padding-left: 10px;
+
+.logo-footer img {
     width: 70px;
-    height: auto;
+    height: 70px;
 }
 
-.footer_third {
-    margin-right: 70px;
-    float: left;
-    height: 100%;
-}
-
-.innerfooter .footer_third h1 {
-    font-size: 18px;
+.footer-third h3 {
     color: white;
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
 }
 
-.footer_third a,
-.footer_third div {
-    font-size: 14px;
+.footer-third li{
     color: white;
-    display: block;
     letter-spacing: 1px;
     font-weight: bold;
     width: 100%;
     padding-bottom: 5px;
-    text-decoration: none;
 }
 
-.footer_third a:hover {
+.footer-third a:hover {
     cursor: pointer;
     color: green;
 }
 
 
-.footer_third li {
+.footer-third li {
     display: inline-block;
     padding-right: 5px;
 }
@@ -78,57 +60,8 @@
 }
 
 
-@media(max-width: 882px) {
-
-    .innerfooter {
-        display: grid;
+@media(max-width: 824px) {
+    .footer-grid{
         grid-template-columns: 1fr 1fr;
-        grid-gap: 0.5em;
-    }
-
-    .logo_footer img {
-        padding-left: 0px;
-        width: 50px;
-    }
-
-    .footer_third li {
-        display: block;
-        padding-right: 0px;
-    }
-
-    .footer_third {
-        align-self: center;
-        justify-self: center;
-        margin-right: 0px;
-        width: 115px;
-        float: left;
-        height: 100%;
-    }
-
-    .footer_third a,
-    .footer_third div {
-        font-size: 13px;
-    }
-
-    .innerfooter .footer_third h1 {
-        font-size: 17px;
-        margin-bottom: 20px;
-    }
-
-    .innerfooter {
-        width: 60%;
-    }
-
-    .logo_footer {
-        align-self: center;
-        justify-self: center;
-        width: 100px;
-        height: 70px;
-    }
-}
-
-@media(max-width: 612px) {
-    .innerfooter {
-        width: 80%;
     }
 }

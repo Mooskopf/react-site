@@ -7,40 +7,46 @@ import Book from "../assets/book.jpg"
 function Imprint() {
     return (
         <div>
-            <div className="headpic">
+            <header className="banner">
                 <LazyLoadImage
                     alt="Banner"
                     effect="blur"
                     src={Book} />
-            </div>
-            <div className="container">
-                <div className="impContainer">
-                    <div className="impressum">
-                        <h1><Trans i18nKey="Imp.Hl"></Trans></h1>
-                        <h2><Trans i18nKey="Footer.Ad"></Trans></h2>
-                        <div>Lorem ipsum</div>
-                        <div>Lorem ipsum 60</div>
-                        <div>7777 Lorem ipsum</div>
-                        <div>Lorem ipsum</div>
-                        <br></br>
-                        <div>Email: ipsum.info.com</div>
-                        <div><Trans i18nKey="Imp.Num"></Trans></div>
-                        <br></br>
-                        <h2><Trans i18nKey="Imp.Res"></Trans></h2>
-                        <div>Max Mustermann, Musterstraße 12, 44444 Schlumpfhausen</div>
-                        <br></br>
-                        <h2><Trans i18nKey="Imp.Adv"></Trans></h2>
-                        <div>Max Mustermann, Musterstraße 12, 44444 Schlumpfhausen</div>
-                        <br></br>
-                    </div>
-                    <div id="privacy">
-                        <h1><Trans i18nKey="Footer.Le"></Trans></h1>
-                        <div>
-                            <Trans i18nKey="Imp.Dat"></Trans>
-                        </div>
-                    </div>
+            </header>
+            <main>
+                <div className="container">
+                    <article className="imorint-container page-section">
+                        <section className="imprint" aria-label="imprint">
+                            <header>
+                                <h1><Trans i18nKey="Imp.Hl"></Trans></h1>
+                            </header>
+                            <h2><Trans i18nKey="Footer.Ad"></Trans></h2>
+                            <ul className="text undecorated-list">
+                                <li>Lorem ipsum</li>
+                                <li>Lorem ipsum 60</li>
+                                <li>7777 Lorem ipsum</li>
+                                <li>Lorem ipsum</li>
+                            </ul>
+                            <ul className="text text undecorated-list">
+                                <li>Email: ipsum.info.com</li>
+                                <li><Trans i18nKey="Imp.Num"></Trans></li>
+                            </ul>
+                            <h2><Trans i18nKey="Imp.Res"></Trans></h2>
+                            <p className="text">Max Mustermann, Musterstraße 12, 44444 Schlumpfhausen</p>
+                            <h2><Trans i18nKey="Imp.Adv"></Trans></h2>
+                            <p className="text">Max Mustermann, Musterstraße 12, 44444 Schlumpfhausen</p>
+                        </section>
+                        <section id="privacy" className="page-section" aria-label="privacy-policy">
+                            <header>
+                                <h2><Trans i18nKey="Footer.Le"></Trans></h2>
+                            </header>
+                            <p className="text">
+                                <Trans i18nKey="Imp.Dat"></Trans>
+                            </p>
+                        </section>
+                    </article>
                 </div>
-            </div>
+            </main>
         </div>
     )
 }

@@ -17,19 +17,19 @@ function Contact() {
     const [error, setError] = useState(false)
 
     //Sets the checked state based on the previous one
-    function checkboxClicked(){
+    function checkboxClicked() {
         setChecked(prev => !prev)
         setRed(false)
     }
 
     //Replaces the normal form error when the checkbox is unchecked with a red border effect
-    function checkCheckbox(){
-        if(!checked){
+    function checkCheckbox() {
+        if (!checked) {
             setRed(true)
         }
     }
 
-    function resetOutput(){
+    function resetOutput() {
         setOutput("")
     }
 
@@ -72,38 +72,45 @@ function Contact() {
     }
 
     return (
-
         <div className="contact">
-            <div className="headpic">
+            <header className="banner">
                 <LazyLoadImage
                     alt="HomeBanner"
                     effect="blur"
                     src={i18n.language === "de" ? Mailger : Mail} />
-            </div>
-            <div className="container">
-                <form onSubmit={handleSubmit.bind(this)} onClick={resetOutput}>
-                    <ul className="inputList">
-                        <h2><Trans i18nKey="Contact.Cu"></Trans></h2>
-                        <li><input className="inText" type="text" name="name" required placeholder="Name"></input></li>
-                        <li><input className="inText" type="email" name="mail" required placeholder="E-Mail"></input></li>
-                        <li><input className="inText" type="text" name="subject"
-                            required placeholder={i18n.language === "en" ? "Subject" : "Betreff"}></input></li>
-                        <li><textarea name="message"
-                            required placeholder={i18n.language === "en" ? "Message" : "Nachricht"}></textarea></li>
-                        <li className="checkItem">
-                            <label className="checkContainer">
-                                <Trans i18nKey="Contact.Ch1"></Trans> <Link to="impressum#datenschutz" id="checkLink"><Trans i18nKey="Contact.Ch2"></Trans></Link> <Trans i18nKey="Contact.Ch3"></Trans>
-                                <input type="checkbox" required onClick={checkboxClicked} />
-                                <span className="checkmark" style={red ? {border: "1px solid red"} : {border: ""}}></span>
-                            </label>
-                        </li>
-                        <li><button type="submit" className="bluebutton" onClick={checkCheckbox}><Trans i18nKey="Contact.Se">Send</Trans></button></li>
-                        <li><div className="output" style={error ? {color: "red"} : {color: "black"}}>{output}</div></li>
-                    </ul>
-                </form>
-            </div>
+            </header>
+            <main>
+                <section aria-label="contact-form" className="page-section">
+                    <div className="container">
+                        <form onSubmit={handleSubmit.bind(this)}>
+                            <ul>
+                                <header>
+                                    <h2><Trans i18nKey="Contact.Cu"></Trans></h2>
+                                </header>
+                                <div onClick={resetOutput}>
+                                    <li><input aria-label="name" className="input-text" type="text" name="name" required placeholder="Name"></input></li>
+                                    <li><input aria-label="email" className="input-text" type="email" name="mail" required placeholder="E-Mail"></input></li>
+                                    <li><input aria-label="subject" className="input-text" type="text" name="subject"
+                                        required placeholder={i18n.language === "en" ? "Subject" : "Betreff"}></input></li>
+                                    <li><textarea aria-label="message" name="message"
+                                        required placeholder={i18n.language === "en" ? "Message" : "Nachricht"}></textarea></li>
+                                    <li className="check-item">
+                                        <label className="check-container">
+                                            <Trans i18nKey="Contact.Ch1"></Trans> <Link to="impressum#datenschutz" className="imprint-link"><Trans i18nKey="Contact.Ch2"></Trans></Link> <Trans i18nKey="Contact.Ch3"></Trans>
+                                            <input type="checkbox" required onClick={checkboxClicked} />
+                                            <span className="checkmark" style={red ? { border: "1px solid red" } : { border: "" }}></span>
+                                        </label>
+                                    </li>
+                                </div>
+                                <li><button type="submit" className="blue-button" onClick={checkCheckbox}><Trans i18nKey="Contact.Se">Send</Trans></button></li>
+                                <li><p className="output" aria-label="output message" style={error ? { color: "red" } : { color: "black" }}>{output}</p></li>
+                            </ul>
+                        </form>
+                    </div>
+                </section>
+            </main>
         </div>
     )
 }
 
-export default withTranslation() (Contact)
+export default withTranslation()(Contact)

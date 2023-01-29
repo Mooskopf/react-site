@@ -25,58 +25,66 @@ function Products() {
 
     return (
         <div className="products">
-            <div className="headpic">
+            <header className="banner">
                 <LazyLoadImage
                     alt="Banner"
                     effect="blur"
                     src={i18n.language === "de" ? GlassGer : Glass} />
-            </div>
-            <div className="container">
-                {!vidActive ?
-                    <div id="bgid">
-                        <h1><Trans i18nKey="Prod.Op"></Trans></h1>
-                        <div className="line" id="vmLine"></div>
-                        <div className="bg">
-                            <div className="p1Container" id="product1">
-                                <div className="p1Desktop">
-                                    <img src={Product1} alt="Prod1"></img>
-                                </div>
-                                <div>
-                                    <div className="text">
-                                        <h3><Trans i18nKey="Home.Ba"></Trans></h3>
-                                        <Trans i18nKey="Prod.Btext1"></Trans>
-                                        <br></br><br></br>
-                                        <Trans i18nKey="Prod.Btext2"></Trans>
-                                        <br></br>
-                                        <br></br>
-                                        <button className="bluebutton" onClick={vidClick} type="button" id="vidbutton">Video</button>
+            </header>
+            <main>
+                <div className="container">
+                    {!vidActive &&
+                        <article aria-label="products" className="page-section">
+                            <header>
+                                <h1><Trans i18nKey="Prod.Op"></Trans></h1>
+                            </header>
+                            <div className="line"></div>
+                            <div className="products">
+                                <section className="product1-container" id="product1" aria-label="product1">
+                                    <div className="product1-desktop">
+                                        <img src={Product1} alt="Prod1"></img>
                                     </div>
-                                </div>
-                                <div className="p1Mobile">
-                                    <img src={Product1} alt="Product1"></img>
-                                </div>
-                            </div>
-                            <div className="p2Container" id="product2">
-                                <div>
-                                    <div className="text">
-                                        <h3><Trans i18nKey="Home.Ge"></Trans></h3>
-                                        <Trans i18nKey="Prod.Gtext1"></Trans>
-                                        <br></br><br></br>
-                                        <Trans i18nKey="Prod.Gtext2"></Trans>
+                                    <div>
+                                        <div className="text">
+                                            <header>
+                                                <h3><Trans i18nKey="Home.Ba"></Trans></h3>
+                                            </header>
+                                            <Trans i18nKey="Prod.Btext1"></Trans>
+                                            <br></br><br></br>
+                                            <Trans i18nKey="Prod.Btext2"></Trans>
+                                            <br></br>
+                                            <br></br>
+                                            <button className="blue-button" onClick={vidClick} type="button" id="vidbutton">Video</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <img src={Product2} alt="Product2"></img>
-                                </div>
+                                    <div className="product1-mobile">
+                                        <img src={Product1} alt="Product1"></img>
+                                    </div>
+                                </section>
+                                <section className="product2-container" id="product2" aria-label="product2">
+                                    <div>
+                                        <div className="text">
+                                            <header>
+                                                <h3><Trans i18nKey="Home.Ge"></Trans></h3>
+                                            </header>
+                                            <Trans i18nKey="Prod.Gtext1"></Trans>
+                                            <br></br><br></br>
+                                            <Trans i18nKey="Prod.Gtext2"></Trans>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src={Product2} alt="Product2"></img>
+                                    </div>
+                                </section>
                             </div>
-                        </div>
-                    </div> : <></>}
-                {vidActive ?
-                    <div className="batteryVid">
-                        <button className="bluebutton"type="button" onClick={back}>&laquo; <Trans i18nKey="Prod.Bu"></Trans></button>
-                        <img src={Vid} alt="vid"></img>
-                    </div> : <></>}
-            </div>
+                        </article>}
+                    {vidActive &&
+                        <article className="products-video-container page-section">
+                            <button className="blue-button" type="button" onClick={back}>&laquo; <Trans i18nKey="Prod.Bu"></Trans></button>
+                            <img src={Vid} alt="vid"></img>
+                        </article>}
+                </div>
+            </main>
         </div>
     )
 }

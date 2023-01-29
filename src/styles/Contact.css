@@ -1,5 +1,5 @@
 .contact textarea {
-    width: 450px;
+    width: calc(100% - 10px);
     height: 200px;
     border-radius: 4px;
     padding-left: 10px;
@@ -7,10 +7,12 @@
 }
 
 .contact form {
-    padding-top: 40px;
-    padding-bottom: 40px;
     margin: 0 auto;
-    width: 500px;
+    width: 450px;
+}
+
+.contact form ul {
+    padding: 0px;
 }
 
 .contact form li {
@@ -18,8 +20,8 @@
     padding-bottom: 8px;
 }
 
-.inText {
-    width: 450px;
+.input-text {
+    width: calc(100% - 10px);
     height: 30px;
     border: 1px solid black;
     border-radius: 4px;
@@ -34,17 +36,16 @@
     background-color: #eee;
 }
 
-.checkItem {
+.check-item {
     margin-top: 16px;
     margin-bottom: 20px;
 }
 
 /* The container */
-.checkContainer {
+.check-container {
     display: inline-block;
     position: relative;
     padding-left: 35px;
-    height: 28px;
     font-size: 17.5px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -53,7 +54,7 @@
 }
 
 /* Hide the browser's default checkbox */
-.checkContainer input {
+.check-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -78,7 +79,7 @@
 }
 
 /* When the checkbox is checked, add a blue background */
-.checkContainer input:checked~.checkmark {
+.check-container input:checked~.checkmark {
     background-color: #2196F3;
 }
 
@@ -90,12 +91,12 @@
 }
 
 /* Show the checkmark when checked */
-.checkContainer input:checked~.checkmark:after {
+.check-container input:checked~.checkmark:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.checkContainer .checkmark:after {
+.check-container .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -107,7 +108,7 @@
     transform: rotate(45deg);
 }
 
-#checkLink {
+.imprint-link {
     color: #2196F3;
 }
 
@@ -116,19 +117,21 @@
     font-size: 17.5px;
 }
 
-@media(max-width: 608px) {
+@media(max-width: 620px) {
 
-    .inText {
+    .contact form {
         width: 100%;
+    }
+
+    .input-text {
         height: 25px;
     }
 
     .contact textarea {
-        width: 100%;
         height: 150px;
     }
 
-    .checkContainer {
+    .check-container {
         height: 50px;
         font-size: 16px;
     }
